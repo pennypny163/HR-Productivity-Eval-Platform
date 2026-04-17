@@ -1,0 +1,160 @@
+{
+  "bundles": [
+    {
+      "bundle_id": "bundle-001",
+      "bundle_name": "高频招聘效率优先型",
+      "bundle_type": "efficiency_first",
+      "target_problem": "招聘量大、流程长、人效低，需要全链路提效",
+      "suitable_for": ["高频招聘企业", "100+岗位同时开放", "招聘团队人效需提升"],
+      "components": [
+        {
+          "role": "寻源与触达核心",
+          "sku_id": "sku-src-001",
+          "sku_name": "Fetcher AI",
+          "responsibility": "负责候选人自动寻源和批量触达，提升sourcing效率",
+          "priority": "core"
+        },
+        {
+          "role": "面试评估核心",
+          "sku_id": "sku-int-003",
+          "sku_name": "Metaview",
+          "responsibility": "负责面试记录和证据提取，减少面试官笔记负担",
+          "priority": "important"
+        },
+        {
+          "role": "全流程自动化核心",
+          "sku_id": "sku-fc-001",
+          "sku_name": "Paradox Olivia",
+          "responsibility": "负责候选人全流程交互和运营自动化，7×24响应",
+          "priority": "core"
+        }
+      ],
+      "bundle_advantages": [
+        "覆盖从寻源到面试到录用的全链路",
+        "三个模块各有专长，互补性强",
+        "自动化程度高，显著提升人效",
+        "候选人体验好，降低流失率"
+      ],
+      "risk_notes": [
+        "三个工具的集成需要额外开发",
+        "总采购成本较高",
+        "需要招聘团队适应新工作流",
+        "Fetcher AI不支持中文，需评估适用性"
+      ],
+      "estimated_roi": "预计可提升招聘效率40-60%，降低单位招聘成本25-35%"
+    },
+    {
+      "bundle_id": "bundle-002",
+      "bundle_name": "面试质量提升型",
+      "bundle_type": "quality_focus",
+      "target_problem": "面试官反馈不一致、评估缺乏结构化、面试过程无记录",
+      "suitable_for": ["面试质量需提升的企业", "多面试官协同场景", "需要面试证据留存"],
+      "components": [
+        {
+          "role": "结构化面试平台",
+          "sku_id": "sku-int-001",
+          "sku_name": "HireVue",
+          "responsibility": "提供结构化面试设计、视频面试和AI评估能力",
+          "priority": "core"
+        },
+        {
+          "role": "面试记录与证据",
+          "sku_id": "sku-int-003",
+          "sku_name": "Metaview",
+          "responsibility": "自动记录面试过程，提取关键证据，生成评估摘要",
+          "priority": "important"
+        }
+      ],
+      "bundle_advantages": [
+        "HireVue负责面试设计和标准化，Metaview负责记录和证据",
+        "两者互补，覆盖面试全生命周期",
+        "显著提升评估一致性和可追溯性",
+        "降低面试官主观偏差"
+      ],
+      "risk_notes": [
+        "两个工具的数据打通需要评估",
+        "HireVue的AI评估公平性需持续关注",
+        "面试官需要适应新的面试流程",
+        "总成本需要评估ROI"
+      ],
+      "estimated_roi": "预计可提升面试评估一致性50%+，减少错误录用率20-30%"
+    },
+    {
+      "bundle_id": "bundle-003",
+      "bundle_name": "招聘自动化优先型",
+      "bundle_type": "automation_first",
+      "target_problem": "招聘运营重复工作多、候选人响应慢、流程推进效率低",
+      "suitable_for": ["招聘运营效率需提升", "候选人体验需改善", "需要7×24响应能力"],
+      "components": [
+        {
+          "role": "全流程自动化平台",
+          "sku_id": "sku-fc-004",
+          "sku_name": "Eightfold AI",
+          "responsibility": "提供AI人才匹配和全流程招聘运营能力",
+          "priority": "core"
+        },
+        {
+          "role": "寻源辅助模块",
+          "sku_id": "sku-src-002",
+          "sku_name": "SeekOut",
+          "responsibility": "补充外部人才搜索能力，扩大候选人池",
+          "priority": "supplementary"
+        }
+      ],
+      "bundle_advantages": [
+        "Eightfold AI提供全流程基础设施",
+        "SeekOut补充外部人才搜索深度",
+        "深度学习驱动的匹配和推荐",
+        "支持私有化部署，安全合规最强"
+      ],
+      "risk_notes": [
+        "Eightfold AI实施周期长、成本高",
+        "需要较强的内部IT支持",
+        "两个平台的数据整合需要规划",
+        "适合大型企业，中小企业可能过重"
+      ],
+      "estimated_roi": "预计可提升招聘自动化率60%+，但需要6-12个月实施周期"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "scenario-A",
+      "scenario_name": "简历量很大，初筛效率低",
+      "problem_description": "企业每月收到数千份简历，招聘团队花费大量时间在初筛上，导致优质候选人响应延迟，流失率高。",
+      "recommended_tracks": ["sourcing_outreach", "fullcycle_recruiting"],
+      "recommended_skus": [
+        {"sku_id": "sku-src-002", "sku_name": "SeekOut", "reason": "强大的搜索和匹配能力，帮助从海量简历中精准定位目标候选人"},
+        {"sku_id": "sku-fc-001", "sku_name": "Paradox Olivia", "reason": "对话式AI自动完成初筛和FAQ应答，7×24响应候选人"},
+        {"sku_id": "sku-src-001", "sku_name": "Fetcher AI", "reason": "自动化触达序列，快速联系筛选后的候选人"}
+      ],
+      "recommended_bundle": "bundle-001",
+      "implementation_suggestion": "建议先部署Paradox Olivia处理候选人自动筛选和响应，再引入SeekOut提升搜索精准度，最后用Fetcher AI补充主动触达能力。"
+    },
+    {
+      "scenario_id": "scenario-B",
+      "scenario_name": "面试官反馈不一致，过程不结构化",
+      "problem_description": "不同面试官对同一候选人的评价差异大，面试过程缺乏标准化，评估依据不充分，导致招聘决策质量低。",
+      "recommended_tracks": ["interview_assessment"],
+      "recommended_skus": [
+        {"sku_id": "sku-int-001", "sku_name": "HireVue", "reason": "提供完整的结构化面试设计和AI辅助评估，提升评估一致性"},
+        {"sku_id": "sku-int-003", "sku_name": "Metaview", "reason": "自动记录面试过程，提取关键证据，确保评估有据可依"},
+        {"sku_id": "sku-int-002", "sku_name": "Pymetrics", "reason": "通过游戏化测评补充软技能评估，减少主观偏差"}
+      ],
+      "recommended_bundle": "bundle-002",
+      "implementation_suggestion": "建议先部署HireVue建立结构化面试标准，再引入Metaview实现面试记录自动化，Pymetrics可作为补充测评工具在校招等场景试点。"
+    },
+    {
+      "scenario_id": "scenario-C",
+      "scenario_name": "招聘流程长，候选人流失高",
+      "problem_description": "从简历筛选到发offer平均需要30+天，候选人在等待过程中流失严重，offer接受率持续下降。",
+      "recommended_tracks": ["fullcycle_recruiting", "sourcing_outreach"],
+      "recommended_skus": [
+        {"sku_id": "sku-fc-001", "sku_name": "Paradox Olivia", "reason": "对话式AI实现全流程自动化交互，大幅缩短响应时间"},
+        {"sku_id": "sku-fc-004", "sku_name": "Eightfold AI", "reason": "AI驱动的全流程招聘运营，提升流程效率和候选人体验"},
+        {"sku_id": "sku-fc-003", "sku_name": "Manatal", "reason": "性价比高的全流程招聘管理平台，快速上线"}
+      ],
+      "recommended_bundle": "bundle-003",
+      "implementation_suggestion": "根据企业规模选择：大型企业建议Eightfold AI + Paradox Olivia组合；中型企业建议Manatal + Paradox Olivia组合；重点是缩短每个环节的响应时间。"
+    }
+  ]
+}

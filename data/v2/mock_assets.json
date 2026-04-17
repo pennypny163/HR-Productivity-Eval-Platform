@@ -1,0 +1,316 @@
+{
+  "jd_templates": {
+    "jd_senior_backend": {
+      "title": "高级后端工程师",
+      "department": "基础架构部",
+      "level": "P6/P7",
+      "location": "北京/上海",
+      "description": "负责公司核心分布式系统的设计与开发，参与技术架构决策，推动系统性能优化和稳定性提升。",
+      "requirements": [
+        "5年以上后端开发经验，精通Go或Java",
+        "深入理解分布式系统设计原理",
+        "有大规模高并发系统开发经验",
+        "良好的系统设计和架构能力",
+        "优秀的沟通协作能力"
+      ],
+      "nice_to_have": ["开源项目贡献", "一线互联网公司背景", "技术博客或演讲经验"],
+      "salary_range": "40K-70K/月",
+      "benefits": ["股票期权", "弹性工作", "技术氛围好"]
+    },
+    "jd_product_manager": {
+      "title": "高级产品经理",
+      "department": "产品部",
+      "level": "P6",
+      "location": "北京",
+      "description": "负责公司核心产品线的规划与迭代，深入理解用户需求，驱动产品增长。",
+      "requirements": [
+        "5年以上产品经理经验",
+        "有B端或SaaS产品经验优先",
+        "数据驱动的产品决策能力",
+        "优秀的跨部门沟通能力",
+        "有从0到1产品经验"
+      ],
+      "nice_to_have": ["技术背景", "海外产品经验"],
+      "salary_range": "35K-55K/月",
+      "benefits": ["股票期权", "弹性工作"]
+    },
+    "jd_data_analyst": {
+      "title": "数据分析师",
+      "department": "数据部",
+      "level": "P5",
+      "location": "上海",
+      "description": "负责业务数据分析，构建数据指标体系，为业务决策提供数据支持。",
+      "requirements": [
+        "3年以上数据分析经验",
+        "精通SQL，熟悉Python/R",
+        "有数据可视化和报表开发经验",
+        "良好的业务理解能力",
+        "较强的逻辑分析能力"
+      ],
+      "nice_to_have": ["机器学习基础", "AB测试经验"],
+      "salary_range": "25K-40K/月",
+      "benefits": ["弹性工作", "学习补贴"]
+    }
+  },
+  "candidate_profiles": {
+    "candidate_profile_01": {
+      "name": "张明",
+      "current_title": "高级后端工程师",
+      "current_company": "字节跳动",
+      "experience_years": 6,
+      "education": "清华大学 计算机科学 硕士",
+      "skills": ["Go", "Java", "分布式系统", "Kubernetes", "微服务"],
+      "highlights": ["主导过千万级QPS系统设计", "开源项目贡献者"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_02": {
+      "name": "李婷",
+      "current_title": "后端技术专家",
+      "current_company": "阿里巴巴",
+      "experience_years": 8,
+      "education": "浙江大学 软件工程 硕士",
+      "skills": ["Java", "Spring Cloud", "分布式存储", "性能优化"],
+      "highlights": ["双11核心系统负责人", "多项技术专利"],
+      "status": "主动求职"
+    },
+    "candidate_profile_03": {
+      "name": "王浩",
+      "current_title": "架构师",
+      "current_company": "美团",
+      "experience_years": 10,
+      "education": "北京大学 计算机科学 博士",
+      "skills": ["Go", "Rust", "系统架构", "数据库内核"],
+      "highlights": ["技术委员会成员", "多次技术大会演讲"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_04": {
+      "name": "陈雪",
+      "current_title": "后端开发工程师",
+      "current_company": "快手",
+      "experience_years": 4,
+      "education": "华中科技大学 计算机科学 本科",
+      "skills": ["Go", "Python", "消息队列", "缓存系统"],
+      "highlights": ["从0到1搭建推荐系统后端"],
+      "status": "主动求职"
+    },
+    "candidate_profile_05": {
+      "name": "刘强",
+      "current_title": "全栈工程师",
+      "current_company": "创业公司",
+      "experience_years": 5,
+      "education": "上海交通大学 软件工程 硕士",
+      "skills": ["Node.js", "Go", "React", "AWS"],
+      "highlights": ["独立负责公司技术架构"],
+      "status": "主动求职"
+    },
+    "candidate_profile_06": {
+      "name": "赵芳",
+      "current_title": "高级产品经理",
+      "current_company": "某头部互联网公司",
+      "experience_years": 7,
+      "education": "复旦大学 管理学 硕士",
+      "skills": ["产品规划", "数据分析", "用户研究", "B端产品"],
+      "highlights": ["负责过DAU千万级产品"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_07": {
+      "name": "孙磊",
+      "current_title": "后端开发工程师",
+      "current_company": "小红书",
+      "experience_years": 3,
+      "education": "南京大学 计算机科学 本科",
+      "skills": ["Java", "Spring Boot", "MySQL", "Redis"],
+      "highlights": ["参与社区搜索系统优化"],
+      "status": "主动求职"
+    },
+    "candidate_profile_08": {
+      "name": "周琳",
+      "current_title": "数据工程师",
+      "current_company": "拼多多",
+      "experience_years": 4,
+      "education": "中国科学技术大学 数据科学 硕士",
+      "skills": ["Python", "Spark", "Flink", "数据仓库"],
+      "highlights": ["搭建实时数据处理平台"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_09": {
+      "name": "吴涛",
+      "current_title": "SRE工程师",
+      "current_company": "百度",
+      "experience_years": 6,
+      "education": "哈尔滨工业大学 计算机科学 硕士",
+      "skills": ["Go", "Kubernetes", "Prometheus", "SRE"],
+      "highlights": ["负责核心服务99.99%可用性保障"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_10": {
+      "name": "郑欣",
+      "current_title": "后端开发工程师",
+      "current_company": "网易",
+      "experience_years": 5,
+      "education": "武汉大学 软件工程 本科",
+      "skills": ["Java", "Go", "微服务", "CI/CD"],
+      "highlights": ["主导微服务架构迁移项目"],
+      "status": "主动求职"
+    },
+    "candidate_profile_11": {
+      "name": "黄蕾",
+      "current_title": "技术经理",
+      "current_company": "京东",
+      "experience_years": 9,
+      "education": "同济大学 计算机科学 硕士",
+      "skills": ["Java", "架构设计", "团队管理", "电商系统"],
+      "highlights": ["管理20人技术团队", "618大促技术保障负责人"],
+      "status": "被动候选人"
+    },
+    "candidate_profile_12": {
+      "name": "马骏",
+      "current_title": "后端实习生",
+      "current_company": "无",
+      "experience_years": 0,
+      "education": "北京邮电大学 计算机科学 本科在读",
+      "skills": ["Python", "Java", "基础算法"],
+      "highlights": ["ACM区域赛银牌"],
+      "status": "应届生"
+    }
+  },
+  "interview_transcript": {
+    "id": "mock_interview_transcript",
+    "candidate": "张明",
+    "position": "高级后端工程师",
+    "interviewer": "面试官A（技术总监）",
+    "duration": "60分钟",
+    "sections": [
+      {
+        "topic": "系统设计",
+        "duration": "25分钟",
+        "content": "面试官：请设计一个支持千万级用户的实时消息推送系统。\n候选人：我会从整体架构开始说起。首先，我们需要考虑几个核心问题：连接管理、消息路由、消息存储和推送保障...\n（候选人详细描述了基于WebSocket的长连接管理方案，使用一致性哈希进行连接分片，通过消息队列实现异步推送，并设计了消息确认和重试机制）\n面试官：如果需要支持跨地域部署呢？\n候选人：可以采用多活架构，每个区域部署独立的推送集群，通过全局消息总线同步...",
+        "interviewer_note": "系统设计能力强，思路清晰，能主动考虑扩展性和容错"
+      },
+      {
+        "topic": "编码能力",
+        "duration": "20分钟",
+        "content": "面试官：请实现一个并发安全的LRU缓存。\n候选人：好的，我用Go来实现...\n（候选人实现了基于双向链表+哈希表的LRU，使用sync.RWMutex保证并发安全，但在边界条件处理上花了较多时间）\n面试官：能否优化锁的粒度？\n候选人：可以考虑分片锁，将缓存按key哈希分成多个分片...",
+        "interviewer_note": "编码能力扎实但速度偏慢，优化思路正确"
+      },
+      {
+        "topic": "项目经验",
+        "duration": "15分钟",
+        "content": "面试官：请介绍你在字节跳动最有挑战的项目。\n候选人：我主导了推荐系统后端的重构项目，将单体架构迁移到微服务...\n（候选人描述了迁移过程中的技术挑战、团队协作和最终成果）",
+        "interviewer_note": "项目经验丰富，有大型系统重构经验，沟通表达清晰"
+      }
+    ]
+  },
+  "interviewer_feedback": {
+    "id": "mock_interviewer_feedback",
+    "candidate": "张明",
+    "position": "高级后端工程师",
+    "feedbacks": [
+      {
+        "interviewer": "面试官A（技术总监）",
+        "round": "技术面试",
+        "overall_rating": 4.2,
+        "dimension_ratings": {
+          "系统设计能力": 4.5,
+          "编码能力": 3.8,
+          "沟通协作": 4.0,
+          "问题解决": 4.3,
+          "技术视野": 4.2
+        },
+        "strengths": "系统设计能力突出，有大规模系统经验，思路清晰",
+        "concerns": "编码速度偏慢，需要关注",
+        "recommendation": "建议通过，推荐进入终面"
+      },
+      {
+        "interviewer": "面试官B（架构师）",
+        "round": "架构面试",
+        "overall_rating": 4.0,
+        "dimension_ratings": {
+          "系统设计能力": 4.3,
+          "编码能力": 3.5,
+          "沟通协作": 4.2,
+          "问题解决": 4.0,
+          "技术视野": 4.5
+        },
+        "strengths": "技术视野广，对新技术有深入理解，架构思维好",
+        "concerns": "编码细节关注度不够，可能需要加强code review习惯",
+        "recommendation": "建议通过"
+      },
+      {
+        "interviewer": "面试官C（HR BP）",
+        "round": "综合面试",
+        "overall_rating": 4.3,
+        "dimension_ratings": {
+          "文化匹配": 4.5,
+          "职业稳定性": 3.8,
+          "成长潜力": 4.5,
+          "团队协作": 4.2,
+          "薪资预期": 3.5
+        },
+        "strengths": "文化匹配度高，成长潜力大，沟通能力好",
+        "concerns": "薪资预期偏高，需要沟通；在字节工作时间不长",
+        "recommendation": "建议通过，薪资需要谈判"
+      }
+    ]
+  },
+  "candidate_status_flow": {
+    "id": "mock_status_flow",
+    "period": "2024-W15",
+    "records": [
+      {"candidate": "张明", "from_stage": "技术面试", "to_stage": "终面", "date": "2024-04-08", "action": "面试通过，安排终面"},
+      {"candidate": "李婷", "from_stage": "简历筛选", "to_stage": "技术面试", "date": "2024-04-08", "action": "简历通过，安排技术面"},
+      {"candidate": "王浩", "from_stage": "触达", "to_stage": "放弃", "date": "2024-04-09", "action": "候选人拒绝，原因：不考虑机会"},
+      {"candidate": "陈雪", "from_stage": "技术面试", "to_stage": "淘汰", "date": "2024-04-09", "action": "技术面未通过"},
+      {"candidate": "刘强", "from_stage": "offer", "to_stage": "拒绝offer", "date": "2024-04-10", "action": "候选人拒绝offer，选择其他公司"},
+      {"candidate": "赵芳", "from_stage": "寻源", "to_stage": "触达", "date": "2024-04-10", "action": "发送触达邮件"},
+      {"candidate": "孙磊", "from_stage": "简历筛选", "to_stage": "技术面试", "date": "2024-04-11", "action": "简历通过"},
+      {"candidate": "郑欣", "from_stage": "终面", "to_stage": "offer", "date": "2024-04-11", "action": "终面通过，发起offer审批"}
+    ]
+  },
+  "recruiting_faq": {
+    "id": "mock_recruiting_faq",
+    "questions": [
+      {"q": "面试一般几轮？", "a": "技术岗位通常3轮：技术面试、架构面试、综合面试（HR）。"},
+      {"q": "面试后多久出结果？", "a": "通常3-5个工作日内会有反馈，如遇特殊情况会提前沟通。"},
+      {"q": "可以远程面试吗？", "a": "支持远程视频面试，使用主流视频会议工具（如Zoom、Teams等）。"},
+      {"q": "薪资结构是怎样的？", "a": "基本薪资+绩效奖金+股票期权，具体根据级别和面试表现确定。"},
+      {"q": "入职时间可以协商吗？", "a": "可以协商，通常希望1个月内入职，特殊情况可延长至2个月。"},
+      {"q": "有试用期吗？", "a": "试用期3个月，期间薪资不打折。"}
+    ]
+  },
+  "recruiting_policy": {
+    "id": "mock_recruiting_policy",
+    "policies": [
+      "所有候选人必须完成至少2轮面试",
+      "offer审批需要部门负责人和HR VP双签",
+      "候选人信息保密期为2年",
+      "内部推荐候选人优先安排面试",
+      "面试反馈需在面试后24小时内提交"
+    ]
+  },
+  "funnel_weekly": {
+    "id": "mock_funnel_weekly",
+    "period": "2024-W15",
+    "data": {
+      "new_applications": 45,
+      "resume_screened": 32,
+      "phone_screen": 18,
+      "technical_interview": 12,
+      "final_interview": 6,
+      "offer_extended": 3,
+      "offer_accepted": 1,
+      "offer_rejected": 1,
+      "candidate_withdrawn": 2,
+      "positions_open": 8,
+      "positions_filled": 1,
+      "avg_time_to_fill": "28天",
+      "conversion_rates": {
+        "application_to_screen": "71%",
+        "screen_to_interview": "56%",
+        "interview_to_final": "50%",
+        "final_to_offer": "50%",
+        "offer_to_accept": "33%"
+      }
+    }
+  }
+}

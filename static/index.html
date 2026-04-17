@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPU Eval · 数字生产力单元评测平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sand: {
+                            50: '#faf9f7', 100: '#f5f3ef', 200: '#ebe7df',
+                            300: '#ddd6c9', 400: '#c4b9a4', 500: '#a89a80',
+                            600: '#8c7a5e', 700: '#6e5f48', 800: '#544838', 900: '#3d342a'
+                        },
+                        accent: {
+                            50: '#fef4ee', 100: '#fde6d3', 200: '#f9c9a5',
+                            300: '#f5a66d', 400: '#ef7a33', 500: '#eb5e0b',
+                            600: '#dc4507', 700: '#b63208', 800: '#91290e', 900: '#7b250f'
+                        },
+                        claude: {
+                            primary: '#d97706', secondary: '#92400e',
+                            bg: '#faf9f7', surface: '#ffffff',
+                            border: '#e7e0d5', text: '#3d342a',
+                            muted: '#8c7a5e', subtle: '#c4b9a4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', '"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                        display: ['"Inter"', '"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace']
+                    },
+                    boxShadow: {
+                        'soft': '0 1px 3px 0 rgba(61,52,42,0.06), 0 1px 2px -1px rgba(61,52,42,0.06)',
+                        'medium': '0 4px 6px -1px rgba(61,52,42,0.07), 0 2px 4px -2px rgba(61,52,42,0.05)',
+                        'elevated': '0 10px 25px -3px rgba(61,52,42,0.08), 0 4px 6px -4px rgba(61,52,42,0.04)',
+                        'float': '0 20px 40px -4px rgba(61,52,42,0.12), 0 8px 16px -6px rgba(61,52,42,0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-sand-50 min-h-screen text-claude-text antialiased">
+    <!-- 侧边导航 -->
+    <aside id="sidebar" class="fixed left-0 top-0 bottom-0 w-60 bg-white border-r border-claude-border z-40 flex flex-col transition-all duration-300">
+        <!-- Logo区 -->
+        <div class="px-5 py-5 border-b border-claude-border">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-soft">
+                    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-sand-900 tracking-tight">DPU Eval</h1>
+                    <p class="text-[10px] text-claude-muted font-medium tracking-wide uppercase">评测平台 · HR招聘</p>
+                </div>
+            </div>
+        </div>
+        <!-- 导航菜单 -->
+        <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+            <button data-page="overview" class="nav-item active">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span>评测概览</span>
+            </button>
+            <button data-page="catalog" class="nav-item">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                <span>SKU 目录</span>
+                <span class="nav-badge" id="nav-sku-count">20</span>
+            </button>
+            <div class="pt-3 pb-1.5 px-3"><span class="text-[10px] font-semibold text-claude-subtle uppercase tracking-wider">评测结果</span></div>
+            <button data-page="general-eval" class="nav-item">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>第一层 · 合格考</span>
+            </button>
+            <button data-page="professional-eval" class="nav-item">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                <span>第二层 · 专业考</span>
+            </button>
+            <button data-page="tiering" class="nav-item">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg>
+                <span>分层榜单</span>
+            </button>
+            <div class="pt-3 pb-1.5 px-3"><span class="text-[10px] font-semibold text-claude-subtle uppercase tracking-wider">参考</span></div>
+            <button data-page="methodology" class="nav-item">
+                <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <span>方法论</span>
+            </button>
+        </nav>
+        <!-- 底部信息 -->
+        <div class="px-5 py-4 border-t border-claude-border">
+            <div class="flex items-center gap-2 text-[11px] text-claude-muted">
+                <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                <span>POC v1.0 · 模拟数据</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main id="main-content" class="ml-60 min-h-screen transition-all duration-300">
+        <!-- 顶部栏 -->
+        <header class="sticky top-0 z-30 bg-sand-50/80 backdrop-blur-xl border-b border-claude-border/50">
+            <div class="px-8 h-14 flex items-center justify-between">
+                <div id="page-breadcrumb" class="flex items-center gap-2 text-sm">
+                    <span class="text-claude-muted">DPU Eval</span>
+                    <svg class="w-3.5 h-3.5 text-claude-subtle" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <span class="font-medium text-sand-900" id="breadcrumb-current">评测概览</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-claude-muted font-mono bg-sand-100 px-2.5 py-1 rounded-md">HR · Recruiting</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 页面容器 -->
+        <div class="px-8 py-6 max-w-[1400px]">
+            <!-- ========== 概览页 ========== -->
+            <section id="page-overview" class="page-section">
+                <!-- Hero区 -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">评测概览</h2>
+                    <p class="text-sm text-claude-muted">HR招聘方向 · 数字生产力单元评测与分层推荐</p>
+                </div>
+                <!-- 指标卡片 -->
+                <div class="grid grid-cols-4 gap-4 mb-8" id="overview-stats"></div>
+                <!-- 流程图 -->
+                <div class="card p-6 mb-8">
+                    <h3 class="text-sm font-semibold text-sand-900 mb-5 flex items-center gap-2">
+                        <span class="w-1 h-4 bg-amber-500 rounded-full"></span>
+                        评测流程：先合格，再分专业
+                    </h3>
+                    <div class="grid grid-cols-4 gap-3" id="flow-steps">
+                        <div class="flow-step" data-step="1" data-color="blue">
+                            <div class="flow-step-num bg-blue-500">1</div>
+                            <h4 class="text-sm font-semibold text-sand-900 mt-3 mb-1">样本采集</h4>
+                            <p class="text-xs text-claude-muted leading-relaxed">全网遍览HR招聘方向数字生产力单元</p>
+                        </div>
+                        <div class="flow-step" data-step="2" data-color="amber">
+                            <div class="flow-step-num bg-amber-500">2</div>
+                            <h4 class="text-sm font-semibold text-sand-900 mt-3 mb-1">合格考</h4>
+                            <p class="text-xs text-claude-muted leading-relaxed">GPA三阶段 + Amazon评估，硬门槛一票否决</p>
+                        </div>
+                        <div class="flow-step" data-step="3" data-color="purple">
+                            <div class="flow-step-num bg-purple-500">3</div>
+                            <h4 class="text-sm font-semibold text-sand-900 mt-3 mb-1">专业考</h4>
+                            <p class="text-xs text-claude-muted leading-relaxed">招聘方向六维评测，真实任务驱动</p>
+                        </div>
+                        <div class="flow-step" data-step="4" data-color="emerald">
+                            <div class="flow-step-num bg-emerald-500">4</div>
+                            <h4 class="text-sm font-semibold text-sand-900 mt-3 mb-1">分层推荐</h4>
+                            <p class="text-xs text-claude-muted leading-relaxed">S/A/B/C四级分层，企业可理解可采购</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图表区 -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="card p-5">
+                        <h3 class="chart-title">SKU 类型分布</h3>
+                        <div id="chart-type-dist" class="h-[260px]"></div>
+                    </div>
+                    <div class="card p-5">
+                        <h3 class="chart-title">最终分层分布</h3>
+                        <div id="chart-tier-dist" class="h-[260px]"></div>
+                    </div>
+                </div>
+                <div class="card p-5 mb-4">
+                    <h3 class="chart-title">合格考 vs 专业考得分矩阵</h3>
+                    <div id="chart-score-compare" class="h-[340px]"></div>
+                </div>
+            </section>
+
+            <!-- ========== SKU目录页 ========== -->
+            <section id="page-catalog" class="page-section hidden">
+                <div class="flex items-end justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">SKU 样本目录</h2>
+                        <p class="text-sm text-claude-muted">HR招聘方向 · <span id="catalog-count">20</span> 个数字生产力单元样本</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <select id="filter-type" class="filter-select">
+                            <option value="">全部类型</option>
+                            <option value="Agent">Agent</option>
+                            <option value="Workflow">Workflow</option>
+                            <option value="Skill">Skill</option>
+                            <option value="Component">Component</option>
+                            <option value="Model">Model</option>
+                        </select>
+                        <select id="filter-runtime" class="filter-select">
+                            <option value="">全部运行模式</option>
+                            <option value="real">Real</option>
+                            <option value="simulated">Simulated</option>
+                            <option value="api_stub">API Stub</option>
+                            <option value="documentation_only">Documentation Only</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+            </section>
+
+            <!-- ========== 合格考结果页 ========== -->
+            <section id="page-general-eval" class="page-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">第一层：统一合格考</h2>
+                    <p class="text-sm text-claude-muted">Snowflake GPA 三阶段法 + Amazon Agent 二维评估 · 硬门槛一票否决</p>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mb-6" id="general-eval-stats"></div>
+                <div class="card overflow-hidden">
+                    <div class="px-5 py-3.5 border-b border-claude-border bg-sand-50/50">
+                        <h3 class="text-sm font-semibold text-sand-900">评测结果明细</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-claude-border bg-sand-50/30">
+                                    <th class="th-cell text-left">SKU</th>
+                                    <th class="th-cell text-left">类型</th>
+                                    <th class="th-cell text-left">评测路径</th>
+                                    <th class="th-cell text-center">总分</th>
+                                    <th class="th-cell text-center">状态</th>
+                                    <th class="th-cell text-left">说明</th>
+                                    <th class="th-cell text-center w-16">详情</th>
+                                </tr>
+                            </thead>
+                            <tbody id="general-eval-table" class="divide-y divide-claude-border/50"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 专业考结果页 ========== -->
+            <section id="page-professional-eval" class="page-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">第二层：招聘方向分专业考</h2>
+                    <p class="text-sm text-claude-muted">六维专业评测体系 · 真实招聘任务驱动</p>
+                </div>
+                <div class="grid grid-cols-6 gap-3 mb-6" id="dimension-cards"></div>
+                <div class="card p-5 mb-6">
+                    <h3 class="chart-title">Shortlist SKU 六维能力雷达图</h3>
+                    <div id="chart-radar" class="h-[400px]"></div>
+                </div>
+                <div class="card overflow-hidden">
+                    <div class="px-5 py-3.5 border-b border-claude-border bg-sand-50/50">
+                        <h3 class="text-sm font-semibold text-sand-900">专业评测结果明细</h3>
+                    </div>
+                    <div id="professional-eval-list" class="divide-y divide-claude-border/50"></div>
+                </div>
+            </section>
+
+            <!-- ========== 分层榜单页 ========== -->
+            <section id="page-tiering" class="page-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">最终分层榜单</h2>
+                    <p class="text-sm text-claude-muted">S/A/B/C 四级分层 · 企业可理解、可采购、可推荐</p>
+                </div>
+                <div id="tiering-content"></div>
+            </section>
+
+            <!-- ========== 方法论页 ========== -->
+            <section id="page-methodology" class="page-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-sand-900 mb-1.5 tracking-tight">评测方法论</h2>
+                    <p class="text-sm text-claude-muted">框架设计、评测逻辑与技术说明</p>
+                </div>
+                <div class="space-y-4" id="methodology-content"></div>
+            </section>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="border-t border-claude-border/50 mt-8">
+            <div class="px-8 py-5 flex items-center justify-between text-xs text-claude-muted">
+                <span>数字生产力单元评测平台 · HR招聘方向 POC v1.0</span>
+                <p>由 AI 通过自然语言生成</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- SKU详情弹窗 -->
+    <div id="sku-detail-modal" class="modal-overlay hidden">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="sticky top-0 z-10 bg-white border-b border-claude-border px-6 py-4 flex items-center justify-between">
+                    <h3 id="modal-title" class="text-base font-bold text-sand-900"></h3>
+                    <button id="modal-close-btn" class="w-8 h-8 rounded-lg hover:bg-sand-100 flex items-center justify-center text-claude-muted hover:text-sand-900 transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div id="modal-body" class="p-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>

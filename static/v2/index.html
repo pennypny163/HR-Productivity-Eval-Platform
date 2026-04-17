@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字生产力单元评测与选型平台 V2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1 class="logo">🏢 数字生产力单元评测与选型平台</h1>
+                <span class="version-badge">V2 Demo</span>
+                <span class="domain-badge">HR · 招聘方向</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#" class="nav-item active" data-page="overview">总览</a>
+                <a href="#" class="nav-item" data-page="tracks">赛道</a>
+                <a href="#" class="nav-item" data-page="compare">对比</a>
+                <a href="#" class="nav-item" data-page="scenarios">场景推荐</a>
+                <a href="#" class="nav-item" data-page="bundles">组合方案</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Page: Overview -->
+            <div id="page-overview" class="page active"></div>
+            <!-- Page: Tracks -->
+            <div id="page-tracks" class="page"></div>
+            <!-- Page: Track Detail -->
+            <div id="page-track-detail" class="page"></div>
+            <!-- Page: SKU Detail -->
+            <div id="page-sku-detail" class="page"></div>
+            <!-- Page: Compare -->
+            <div id="page-compare" class="page"></div>
+            <!-- Page: Scenarios -->
+            <div id="page-scenarios" class="page"></div>
+            <!-- Page: Bundles -->
+            <div id="page-bundles" class="page"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>数字生产力单元评测与选型平台 V2 · Demo版本 · 评测结果基于Mock数据与规则推断</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

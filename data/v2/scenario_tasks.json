@@ -1,0 +1,251 @@
+{
+  "tracks": {
+    "sourcing_outreach": {
+      "track_name": "候选人寻源与触达",
+      "tasks": [
+        {
+          "task_id": "S1",
+          "task_name": "高相关候选人召回",
+          "description": "基于给定JD和候选人画像，搜索并返回Top 20高相关候选人名单",
+          "input": {
+            "jd_ref": "jd_senior_backend",
+            "priority_tags": ["Go/Java经验", "分布式系统", "3年以上", "一线互联网"],
+            "target_profile": "具备分布式系统设计经验的高级后端工程师，有大厂背景优先"
+          },
+          "expected_output": {
+            "candidate_list_count": 20,
+            "ranking_explanation": true,
+            "tag_coverage": true
+          },
+          "scoring_criteria": [
+            {"name": "候选人相关性", "weight": 0.40, "description": "返回候选人与JD的匹配程度"},
+            {"name": "排名解释性", "weight": 0.30, "description": "是否提供清晰的排名理由"},
+            {"name": "标签覆盖完整性", "weight": 0.30, "description": "优先级标签的覆盖程度"}
+          ],
+          "mock_results": {
+            "sku-src-001": {"score": 78, "summary": "返回18个相关候选人，匹配度中上，排名理由简洁但缺乏深度，标签覆盖80%。"},
+            "sku-src-002": {"score": 90, "summary": "返回20个高相关候选人，匹配精准度高，排名理由详细，标签覆盖95%，多元化标签额外加分。"},
+            "sku-src-003": {"score": 82, "summary": "通过属性图谱发现3个传统搜索遗漏的候选人，匹配创新性强，但部分候选人相关性偏低。"},
+            "sku-src-004": {"score": 74, "summary": "返回17个候选人，基础匹配可用，排名理由较简单，标签覆盖75%。"}
+          }
+        },
+        {
+          "task_id": "S2",
+          "task_name": "自动触达文案生成与分层",
+          "description": "为10位候选人生成分层触达文案，包含A/B版本和跟进节奏建议",
+          "input": {
+            "candidate_count": 10,
+            "job_highlights": ["技术挑战大", "团队氛围好", "薪资竞争力强"],
+            "company_brief": "一线互联网公司，专注于云原生基础设施"
+          },
+          "expected_output": {
+            "layered_messages": true,
+            "ab_versions": true,
+            "followup_cadence": true
+          },
+          "scoring_criteria": [
+            {"name": "文案相关性", "weight": 0.40, "description": "文案与候选人画像和岗位的匹配度"},
+            {"name": "自动化程度", "weight": 0.30, "description": "生成和发送的自动化水平"},
+            {"name": "招聘效率支持", "weight": 0.30, "description": "对招聘团队效率的实际提升"}
+          ],
+          "mock_results": {
+            "sku-src-001": {"score": 86, "summary": "自动生成高质量分层文案，A/B测试支持完善，跟进节奏建议实用，自动化程度高。"},
+            "sku-src-002": {"score": 72, "summary": "基础触达文案可用，但个性化程度有限，A/B测试功能较弱。"},
+            "sku-src-003": {"score": 52, "summary": "触达文案生成能力弱，主要依赖第三方工具，自动化程度低。"},
+            "sku-src-004": {"score": 80, "summary": "触达序列自动化良好，文案模板丰富，跟进节奏配置灵活。"}
+          }
+        },
+        {
+          "task_id": "S3",
+          "task_name": "招聘团队回写与协同",
+          "description": "处理候选人状态变化，生成ATS回写方案和团队协同更新",
+          "input": {
+            "status_changes": ["候选人A: 已回复→待安排面试", "候选人B: 未回复→需跟进", "候选人C: 拒绝→标记原因"],
+            "ats_requirements": "需回写到Greenhouse，更新候选人阶段和备注"
+          },
+          "expected_output": {
+            "writeback_fields": true,
+            "collaboration_updates": true,
+            "exception_alerts": true
+          },
+          "scoring_criteria": [
+            {"name": "协同性", "weight": 0.35, "description": "团队协作信息同步的完整性"},
+            {"name": "流程支持度", "weight": 0.35, "description": "对招聘流程推进的支持程度"},
+            {"name": "可集成性", "weight": 0.30, "description": "与ATS等系统的集成深度"}
+          ],
+          "mock_results": {
+            "sku-src-001": {"score": 76, "summary": "ATS回写支持良好，状态同步及时，但异常提醒功能有限。"},
+            "sku-src-002": {"score": 78, "summary": "集成深度较好，支持多ATS回写，团队协同基础功能可用。"},
+            "sku-src-003": {"score": 55, "summary": "集成能力有限，回写功能基础，团队协同支持弱。"},
+            "sku-src-004": {"score": 75, "summary": "内置CRM支持协同，ATS回写基础可用，但深度集成受限于缺乏API。"}
+          }
+        }
+      ]
+    },
+    "interview_assessment": {
+      "track_name": "面试评估与辅助",
+      "tasks": [
+        {
+          "task_id": "I1",
+          "task_name": "结构化面试设计",
+          "description": "基于JD和能力模型，生成结构化面试提纲和评分表",
+          "input": {
+            "jd_ref": "jd_senior_backend",
+            "competency_model": ["系统设计能力", "编码能力", "沟通协作", "问题解决", "技术视野"],
+            "interview_rounds": 3
+          },
+          "expected_output": {
+            "interview_outline": true,
+            "scoring_rubric": true,
+            "key_observations": true
+          },
+          "scoring_criteria": [
+            {"name": "结构化程度", "weight": 0.40, "description": "面试提纲的结构化和标准化水平"},
+            {"name": "岗位匹配度", "weight": 0.35, "description": "面试内容与岗位要求的匹配程度"},
+            {"name": "可执行性", "weight": 0.25, "description": "面试官实际执行的便利性"}
+          ],
+          "mock_results": {
+            "sku-int-001": {"score": 88, "summary": "生成完整的三轮结构化面试提纲，评分标准清晰，能力维度映射准确，可执行性强。"},
+            "sku-int-002": {"score": 62, "summary": "侧重游戏化测评设计，传统面试提纲生成能力有限，但软技能评估维度有独特价值。"},
+            "sku-int-003": {"score": 70, "summary": "提供面试问题模板，但完整结构化设计能力不足，更擅长记录而非设计。"},
+            "sku-int-004": {"score": 58, "summary": "基础面试问题模板可用，但结构化程度和岗位匹配度一般。"}
+          }
+        },
+        {
+          "task_id": "I2",
+          "task_name": "面试记录与证据提取",
+          "description": "基于模拟面试transcript，提取关键证据并生成候选人评估摘要",
+          "input": {
+            "transcript_ref": "mock_interview_transcript",
+            "interviewer_notes": "候选人在系统设计环节表现突出，但编码速度偏慢"
+          },
+          "expected_output": {
+            "candidate_summary": true,
+            "evidence_snippets": true,
+            "competency_judgments": true
+          },
+          "scoring_criteria": [
+            {"name": "总结准确性", "weight": 0.35, "description": "候选人评估摘要的准确性和完整性"},
+            {"name": "证据提取质量", "weight": 0.40, "description": "关键证据片段的提取质量和相关性"},
+            {"name": "判断一致性", "weight": 0.25, "description": "能力维度判断与证据的一致性"}
+          ],
+          "mock_results": {
+            "sku-int-001": {"score": 82, "summary": "AI辅助生成的评估摘要质量较高，证据提取覆盖主要能力维度，判断基本一致。"},
+            "sku-int-002": {"score": 68, "summary": "行为数据分析有独特视角，但与传统面试证据的关联性有限。"},
+            "sku-int-003": {"score": 92, "summary": "AI面试笔记质量业界领先，证据提取精准，自动生成的摘要与面试官备注高度一致。"},
+            "sku-int-004": {"score": 60, "summary": "基础对话记录可用，但证据提取和总结质量一般。"}
+          }
+        },
+        {
+          "task_id": "I3",
+          "task_name": "多面试官反馈整合",
+          "description": "整合3位面试官的反馈，分析分歧点并生成最终建议",
+          "input": {
+            "feedback_ref": "mock_interviewer_feedback",
+            "candidate_resume_ref": "candidate_profile_01",
+            "job_standards": "高级后端工程师，需具备系统设计和团队协作能力"
+          },
+          "expected_output": {
+            "consolidated_review": true,
+            "divergence_analysis": true,
+            "final_recommendation": true
+          },
+          "scoring_criteria": [
+            {"name": "一致性整合能力", "weight": 0.40, "description": "多面试官反馈的整合质量"},
+            {"name": "偏差控制", "weight": 0.30, "description": "识别和处理评估偏差的能力"},
+            {"name": "决策支持度", "weight": 0.30, "description": "最终建议对招聘决策的支持价值"}
+          ],
+          "mock_results": {
+            "sku-int-001": {"score": 85, "summary": "多面试官反馈整合质量高，分歧点分析清晰，最终建议有据可依。"},
+            "sku-int-002": {"score": 72, "summary": "偏差控制能力强，但反馈整合主要基于测评数据，传统面试反馈整合有限。"},
+            "sku-int-003": {"score": 75, "summary": "基于面试记录的反馈整合可用，但主动偏差检测能力有限。"},
+            "sku-int-004": {"score": 62, "summary": "基础反馈收集和整合功能可用，但分歧分析和偏差控制能力弱。"}
+          }
+        }
+      ]
+    },
+    "fullcycle_recruiting": {
+      "track_name": "全流程招聘Agent/Platform",
+      "tasks": [
+        {
+          "task_id": "F1",
+          "task_name": "候选人全流程推进",
+          "description": "基于候选人当前状态，生成下一步动作建议和自动沟通内容",
+          "input": {
+            "candidate_ref": "candidate_profile_01",
+            "job_ref": "jd_senior_backend",
+            "current_stage": "技术面试通过，待安排终面"
+          },
+          "expected_output": {
+            "next_actions": true,
+            "auto_communication": true,
+            "status_change_suggestions": true
+          },
+          "scoring_criteria": [
+            {"name": "流程闭环", "weight": 0.40, "description": "推进动作的完整性和连贯性"},
+            {"name": "自动化程度", "weight": 0.30, "description": "沟通和状态更新的自动化水平"},
+            {"name": "沟通合理性", "weight": 0.30, "description": "自动生成沟通内容的质量和适当性"}
+          ],
+          "mock_results": {
+            "sku-fc-001": {"score": 88, "summary": "自动生成终面安排沟通，候选人交互流畅，状态推进建议合理，7×24响应。"},
+            "sku-fc-002": {"score": 70, "summary": "基础推进建议可用，自动沟通内容质量一般，状态更新需手动确认。"},
+            "sku-fc-003": {"score": 72, "summary": "流程推进功能完整，但自动化程度有限，沟通内容模板化。"},
+            "sku-fc-004": {"score": 85, "summary": "AI匹配驱动的推进建议精准，自动化程度高，但对话式交互不如Paradox。"}
+          }
+        },
+        {
+          "task_id": "F2",
+          "task_name": "招聘运营FAQ与调度",
+          "description": "处理候选人FAQ、面试官时间调度和异常情况",
+          "input": {
+            "faq_ref": "mock_recruiting_faq",
+            "interviewer_schedule": "3位面试官，下周一至周五可用时段各异",
+            "policy_ref": "mock_recruiting_policy"
+          },
+          "expected_output": {
+            "faq_responses": true,
+            "scheduling_suggestions": true,
+            "exception_handling": true
+          },
+          "scoring_criteria": [
+            {"name": "响应质量", "weight": 0.35, "description": "FAQ自动响应的准确性和完整性"},
+            {"name": "调度效率", "weight": 0.35, "description": "面试安排的效率和合理性"},
+            {"name": "业务可控性", "weight": 0.30, "description": "异常处理和业务规则遵循"}
+          ],
+          "mock_results": {
+            "sku-fc-001": {"score": 90, "summary": "FAQ自动响应质量高，面试调度智能化，异常处理机制完善，是核心优势场景。"},
+            "sku-fc-002": {"score": 65, "summary": "基础FAQ响应可用，调度功能有限，异常处理需人工介入。"},
+            "sku-fc-003": {"score": 70, "summary": "面试安排功能可用，FAQ响应基础，业务规则配置灵活性一般。"},
+            "sku-fc-004": {"score": 80, "summary": "AI驱动的调度和FAQ响应质量较高，但定制化配置需要技术支持。"}
+          }
+        },
+        {
+          "task_id": "F3",
+          "task_name": "招聘经理周报生成",
+          "description": "基于一周招聘数据，生成招聘进展摘要和风险提示",
+          "input": {
+            "funnel_ref": "mock_funnel_weekly",
+            "key_events": ["2个候选人放弃", "1个offer被拒", "3个新岗位开放"],
+            "period": "2024-W15"
+          },
+          "expected_output": {
+            "progress_summary": true,
+            "risk_alerts": true,
+            "action_suggestions": true
+          },
+          "scoring_criteria": [
+            {"name": "运营洞察", "weight": 0.40, "description": "数据分析和洞察的深度"},
+            {"name": "数据整合质量", "weight": 0.30, "description": "多源数据整合的完整性"},
+            {"name": "管理支持价值", "weight": 0.30, "description": "对招聘管理决策的支持价值"}
+          ],
+          "mock_results": {
+            "sku-fc-001": {"score": 72, "summary": "基础招聘数据汇总可用，但深度分析和洞察能力有限。"},
+            "sku-fc-002": {"score": 45, "summary": "缺乏分析仪表盘，周报生成能力弱，数据整合不足。"},
+            "sku-fc-003": {"score": 75, "summary": "招聘分析功能可用，周报模板实用，但洞察深度一般。"},
+            "sku-fc-004": {"score": 88, "summary": "深度学习驱动的人才分析能力强，数据整合全面，洞察质量高。"}
+          }
+        }
+      ]
+    }
+  }
+}

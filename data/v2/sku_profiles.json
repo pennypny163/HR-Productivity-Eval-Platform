@@ -1,0 +1,554 @@
+[
+  {
+    "id": "sku-src-001",
+    "sku_code": "SRC-FETCHER",
+    "product_name": "Fetcher AI",
+    "vendor_name": "Fetcher",
+    "official_url": "https://fetcher.ai",
+    "unit_level": "platform",
+    "primary_track": "sourcing_outreach",
+    "secondary_tracks": [],
+    "short_description": "AI驱动的候选人寻源与自动化触达平台，帮助招聘团队高效发现和联系被动候选人。",
+    "core_value": "通过AI匹配算法和自动化触达序列，将招聘团队的寻源效率提升3-5倍。",
+    "supported_stages": ["人才寻源", "候选人触达", "候选人推荐", "多渠道sourcing"],
+    "target_customer": ["中大型企业", "高频招聘团队", "技术招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "seat_based",
+    "language_support": ["en"],
+    "region_support": ["北美", "欧洲"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "CRM", "Email", "Slack", "LinkedIn"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "sourcing_outreach",
+      "applicable_dimensions": ["search_recall_quality", "matching_relevance", "outreach_automation", "team_workflow_support"],
+      "dimension_weights": {
+        "search_recall_quality": 0.30,
+        "matching_relevance": 0.30,
+        "outreach_automation": 0.25,
+        "team_workflow_support": 0.15
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "outreach_templates"]
+    }
+  },
+  {
+    "id": "sku-src-002",
+    "sku_code": "SRC-SEEKOUT",
+    "product_name": "SeekOut",
+    "vendor_name": "SeekOut",
+    "official_url": "https://seekout.com",
+    "unit_level": "platform",
+    "primary_track": "sourcing_outreach",
+    "secondary_tracks": [],
+    "short_description": "企业级人才搜索与多元化招聘平台，提供深度人才画像和多维度搜索能力。",
+    "core_value": "通过800M+人才数据库和AI驱动的多维搜索，帮助企业精准定位稀缺人才并推动多元化招聘。",
+    "supported_stages": ["人才寻源", "画像匹配", "候选人推荐", "多渠道sourcing", "人才地图"],
+    "target_customer": ["大型企业", "全球化招聘团队", "多元化招聘团队", "技术招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "subscription",
+    "language_support": ["en"],
+    "region_support": ["北美", "欧洲", "亚太"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "HRIS", "Email", "LinkedIn", "Slack"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "sourcing_outreach",
+      "applicable_dimensions": ["search_recall_quality", "matching_relevance", "outreach_automation", "team_workflow_support"],
+      "dimension_weights": {
+        "search_recall_quality": 0.30,
+        "matching_relevance": 0.30,
+        "outreach_automation": 0.25,
+        "team_workflow_support": 0.15
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "outreach_templates"]
+    }
+  },
+  {
+    "id": "sku-src-003",
+    "sku_code": "SRC-FINDEM",
+    "product_name": "Findem",
+    "vendor_name": "Findem",
+    "official_url": "https://findem.ai",
+    "unit_level": "agent",
+    "primary_track": "sourcing_outreach",
+    "secondary_tracks": [],
+    "short_description": "基于属性图谱的AI人才寻源Agent，通过3D人才画像实现精准候选人发现与匹配。",
+    "core_value": "利用属性图谱（Attribute Graph）技术构建多维人才画像，突破传统关键词搜索局限，实现深层次人才匹配。",
+    "supported_stages": ["人才寻源", "画像匹配", "候选人推荐", "人才地图"],
+    "target_customer": ["中大型企业", "技术招聘团队", "高端人才猎聘"],
+    "deployment_mode": "saas",
+    "pricing_model": "usage_based",
+    "language_support": ["en"],
+    "region_support": ["北美"],
+    "integration_level": "medium",
+    "integration_targets": ["ATS", "Email", "LinkedIn"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": false,
+      "pii_handling": "medium",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": false,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": false
+    },
+    "evaluation_config": {
+      "applicable_track": "sourcing_outreach",
+      "applicable_dimensions": ["search_recall_quality", "matching_relevance", "outreach_automation", "team_workflow_support"],
+      "dimension_weights": {
+        "search_recall_quality": 0.30,
+        "matching_relevance": 0.30,
+        "outreach_automation": 0.25,
+        "team_workflow_support": 0.15
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles"]
+    }
+  },
+  {
+    "id": "sku-src-004",
+    "sku_code": "SRC-HIREEZ",
+    "product_name": "hireEZ",
+    "vendor_name": "hireEZ",
+    "official_url": "https://hireez.com",
+    "unit_level": "workflow",
+    "primary_track": "sourcing_outreach",
+    "secondary_tracks": [],
+    "short_description": "AI驱动的外向型招聘工作流平台，整合寻源、触达和招聘CRM能力。",
+    "core_value": "将AI寻源、自动化触达序列和招聘CRM整合为一体化工作流，降低招聘团队工具切换成本。",
+    "supported_stages": ["人才寻源", "候选人触达", "候选人推荐", "多渠道sourcing", "招聘CRM"],
+    "target_customer": ["中型企业", "招聘外包团队", "高频招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "seat_based",
+    "language_support": ["en"],
+    "region_support": ["北美", "欧洲"],
+    "integration_level": "medium",
+    "integration_targets": ["ATS", "Email", "LinkedIn", "Calendar"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": false,
+      "role_permission": true,
+      "pii_handling": "medium",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": false,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "sourcing_outreach",
+      "applicable_dimensions": ["search_recall_quality", "matching_relevance", "outreach_automation", "team_workflow_support"],
+      "dimension_weights": {
+        "search_recall_quality": 0.30,
+        "matching_relevance": 0.30,
+        "outreach_automation": 0.25,
+        "team_workflow_support": 0.15
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "outreach_templates"]
+    }
+  },
+  {
+    "id": "sku-int-001",
+    "sku_code": "INT-HIREVUE",
+    "product_name": "HireVue",
+    "vendor_name": "HireVue",
+    "official_url": "https://hirevue.com",
+    "unit_level": "platform",
+    "primary_track": "interview_assessment",
+    "secondary_tracks": [],
+    "short_description": "企业级视频面试与AI评估平台，提供结构化面试设计、视频面试和AI辅助评估能力。",
+    "core_value": "通过AI驱动的视频面试和游戏化测评，帮助企业实现大规模标准化面试评估，提升面试效率和一致性。",
+    "supported_stages": ["面试结构化设计", "视频面试", "AI评估", "游戏化测评", "反馈标准化"],
+    "target_customer": ["大型企业", "高频招聘团队", "校园招聘团队", "全球化招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "subscription",
+    "language_support": ["en", "es", "fr", "de", "zh", "ja"],
+    "region_support": ["北美", "欧洲", "亚太", "拉美"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "HRIS", "Calendar", "SSO", "Slack"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "interview_assessment",
+      "applicable_dimensions": ["structured_interview_support", "evidence_extraction", "consistency_bias_control", "interviewer_collaboration"],
+      "dimension_weights": {
+        "structured_interview_support": 0.30,
+        "evidence_extraction": 0.25,
+        "consistency_bias_control": 0.25,
+        "interviewer_collaboration": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "interview_transcript", "interviewer_feedback"]
+    }
+  },
+  {
+    "id": "sku-int-002",
+    "sku_code": "INT-PYMETRICS",
+    "product_name": "Pymetrics",
+    "vendor_name": "Pymetrics (Harver)",
+    "official_url": "https://pymetrics.ai",
+    "unit_level": "platform",
+    "primary_track": "interview_assessment",
+    "secondary_tracks": [],
+    "short_description": "基于神经科学的游戏化人才测评平台，通过行为数据评估候选人软技能和岗位匹配度。",
+    "core_value": "利用神经科学游戏和AI算法，提供无偏差的候选人软技能评估，帮助企业做出更公平的招聘决策。",
+    "supported_stages": ["游戏化测评", "能力评估", "岗位匹配", "偏差控制"],
+    "target_customer": ["大型企业", "校园招聘团队", "多元化招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "usage_based",
+    "language_support": ["en", "es", "fr", "de", "pt", "zh"],
+    "region_support": ["北美", "欧洲", "亚太"],
+    "integration_level": "medium",
+    "integration_targets": ["ATS", "HRIS"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": false
+    },
+    "evaluation_config": {
+      "applicable_track": "interview_assessment",
+      "applicable_dimensions": ["structured_interview_support", "evidence_extraction", "consistency_bias_control", "interviewer_collaboration"],
+      "dimension_weights": {
+        "structured_interview_support": 0.30,
+        "evidence_extraction": 0.25,
+        "consistency_bias_control": 0.25,
+        "interviewer_collaboration": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "competency_model"]
+    }
+  },
+  {
+    "id": "sku-int-003",
+    "sku_code": "INT-METAVIEW",
+    "product_name": "Metaview",
+    "vendor_name": "Metaview",
+    "official_url": "https://metaview.ai",
+    "unit_level": "agent",
+    "primary_track": "interview_assessment",
+    "secondary_tracks": [],
+    "short_description": "AI面试记录与洞察Agent，自动生成结构化面试笔记和候选人评估摘要。",
+    "core_value": "通过AI自动记录面试过程并提取关键证据，让面试官专注于对话本身，同时确保评估有据可依。",
+    "supported_stages": ["面试过程记录", "证据提取", "面试总结", "评估一致性支持"],
+    "target_customer": ["中大型企业", "技术招聘团队", "高频面试团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "seat_based",
+    "language_support": ["en"],
+    "region_support": ["北美", "欧洲"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "Calendar", "Zoom", "Google Meet", "Teams"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": false,
+      "pii_handling": "medium",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": false,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": false
+    },
+    "evaluation_config": {
+      "applicable_track": "interview_assessment",
+      "applicable_dimensions": ["structured_interview_support", "evidence_extraction", "consistency_bias_control", "interviewer_collaboration"],
+      "dimension_weights": {
+        "structured_interview_support": 0.30,
+        "evidence_extraction": 0.25,
+        "consistency_bias_control": 0.25,
+        "interviewer_collaboration": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["interview_transcript", "interviewer_feedback"]
+    }
+  },
+  {
+    "id": "sku-int-004",
+    "sku_code": "INT-HUMANLY",
+    "product_name": "Humanly",
+    "vendor_name": "Humanly",
+    "official_url": "https://humanly.io",
+    "unit_level": "workflow",
+    "primary_track": "interview_assessment",
+    "secondary_tracks": ["fullcycle_recruiting"],
+    "short_description": "对话式面试辅助与候选人交互工作流，通过AI聊天机器人实现面试前筛选和面试后反馈收集。",
+    "core_value": "通过对话式AI实现面试前自动筛选、面试中实时辅助和面试后反馈整合，降低面试协调成本。",
+    "supported_stages": ["面试前筛选", "面试安排", "面试过程记录", "反馈收集", "候选人沟通"],
+    "target_customer": ["中型企业", "高频招聘团队", "招聘运营团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "subscription",
+    "language_support": ["en"],
+    "region_support": ["北美"],
+    "integration_level": "medium",
+    "integration_targets": ["ATS", "Calendar", "Slack", "Email"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": false,
+      "role_permission": false,
+      "pii_handling": "medium",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": false,
+      "analytics_dashboard": true,
+      "api_available": false,
+      "multi_role_support": false
+    },
+    "evaluation_config": {
+      "applicable_track": "interview_assessment",
+      "applicable_dimensions": ["structured_interview_support", "evidence_extraction", "consistency_bias_control", "interviewer_collaboration"],
+      "dimension_weights": {
+        "structured_interview_support": 0.30,
+        "evidence_extraction": 0.25,
+        "consistency_bias_control": 0.25,
+        "interviewer_collaboration": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "interview_transcript"]
+    }
+  },
+  {
+    "id": "sku-fc-001",
+    "sku_code": "FC-PARADOX",
+    "product_name": "Paradox Olivia",
+    "vendor_name": "Paradox",
+    "official_url": "https://paradox.ai",
+    "unit_level": "agent",
+    "primary_track": "fullcycle_recruiting",
+    "secondary_tracks": ["interview_assessment"],
+    "short_description": "对话式AI招聘助手，覆盖从候选人申请到面试安排的全流程自动化交互。",
+    "core_value": "通过对话式AI（Olivia）实现7×24候选人交互，自动完成筛选、面试安排、FAQ应答和状态推进，大幅降低招聘运营成本。",
+    "supported_stages": ["候选人申请", "自动筛选", "面试安排", "FAQ应答", "候选人状态管理", "offer沟通"],
+    "target_customer": ["大型企业", "高频招聘团队", "零售/服务业招聘", "校园招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "subscription",
+    "language_support": ["en", "es", "fr", "de", "pt"],
+    "region_support": ["北美", "欧洲", "亚太"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "HRIS", "Calendar", "SMS", "WhatsApp", "Career Site"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "fullcycle_recruiting",
+      "applicable_dimensions": ["process_coverage", "candidate_interaction", "recruiting_automation", "business_control"],
+      "dimension_weights": {
+        "process_coverage": 0.30,
+        "candidate_interaction": 0.25,
+        "recruiting_automation": 0.25,
+        "business_control": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "recruiting_policy", "funnel_data"]
+    }
+  },
+  {
+    "id": "sku-fc-002",
+    "sku_code": "FC-TEZI",
+    "product_name": "Tezi",
+    "vendor_name": "Tezi",
+    "official_url": "https://tezi.ai",
+    "unit_level": "agent",
+    "primary_track": "fullcycle_recruiting",
+    "secondary_tracks": [],
+    "short_description": "AI招聘Agent，自动执行简历筛选、候选人沟通和面试协调等招聘运营任务。",
+    "core_value": "作为招聘团队的AI助手，自动处理重复性招聘运营任务，让招聘官专注于高价值的候选人关系建设。",
+    "supported_stages": ["简历筛选", "候选人沟通", "面试协调", "状态推进", "招聘运营自动化"],
+    "target_customer": ["中型企业", "成长型企业", "招聘团队"],
+    "deployment_mode": "saas",
+    "pricing_model": "seat_based",
+    "language_support": ["en"],
+    "region_support": ["北美"],
+    "integration_level": "medium",
+    "integration_targets": ["ATS", "Email", "Calendar", "Slack"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": false,
+      "role_permission": false,
+      "pii_handling": "medium",
+      "cross_border_risk": "medium"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": false,
+      "analytics_dashboard": false,
+      "api_available": true,
+      "multi_role_support": false
+    },
+    "evaluation_config": {
+      "applicable_track": "fullcycle_recruiting",
+      "applicable_dimensions": ["process_coverage", "candidate_interaction", "recruiting_automation", "business_control"],
+      "dimension_weights": {
+        "process_coverage": 0.30,
+        "candidate_interaction": 0.25,
+        "recruiting_automation": 0.25,
+        "business_control": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles"]
+    }
+  },
+  {
+    "id": "sku-fc-003",
+    "sku_code": "FC-MANATAL",
+    "product_name": "Manatal",
+    "vendor_name": "Manatal",
+    "official_url": "https://manatal.com",
+    "unit_level": "platform",
+    "primary_track": "fullcycle_recruiting",
+    "secondary_tracks": ["sourcing_outreach"],
+    "short_description": "AI驱动的招聘管理平台，整合候选人管理、AI推荐和招聘协作能力。",
+    "core_value": "提供从候选人寻源到录用的一站式招聘管理，通过AI推荐引擎和直观界面降低招聘团队使用门槛。",
+    "supported_stages": ["候选人管理", "AI推荐", "招聘协作", "面试安排", "offer管理", "招聘分析"],
+    "target_customer": ["中小型企业", "招聘外包团队", "成长型企业"],
+    "deployment_mode": "saas",
+    "pricing_model": "seat_based",
+    "language_support": ["en", "th", "ja"],
+    "region_support": ["亚太", "北美", "欧洲"],
+    "integration_level": "medium",
+    "integration_targets": ["Email", "LinkedIn", "Calendar", "Career Site"],
+    "compliance_flags": {
+      "supports_private_deployment": false,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "medium",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "medium",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "fullcycle_recruiting",
+      "applicable_dimensions": ["process_coverage", "candidate_interaction", "recruiting_automation", "business_control"],
+      "dimension_weights": {
+        "process_coverage": 0.30,
+        "candidate_interaction": 0.25,
+        "recruiting_automation": 0.25,
+        "business_control": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "recruiting_policy"]
+    }
+  },
+  {
+    "id": "sku-fc-004",
+    "sku_code": "FC-EIGHTFOLD",
+    "product_name": "Eightfold AI",
+    "vendor_name": "Eightfold AI",
+    "official_url": "https://eightfold.ai",
+    "unit_level": "platform",
+    "primary_track": "fullcycle_recruiting",
+    "secondary_tracks": ["sourcing_outreach"],
+    "short_description": "AI人才智能平台，基于深度学习的人才匹配和全流程招聘运营能力。",
+    "core_value": "通过深度学习人才图谱，实现从人才发现、匹配、招聘到内部流动的全生命周期人才运营，是企业级人才智能基础设施。",
+    "supported_stages": ["人才寻源", "AI匹配", "候选人管理", "招聘运营", "内部流动", "人才分析"],
+    "target_customer": ["大型企业", "全球化招聘团队", "人才运营团队"],
+    "deployment_mode": "hybrid",
+    "pricing_model": "custom_quote",
+    "language_support": ["en", "es", "fr", "de", "zh", "ja", "ko"],
+    "region_support": ["北美", "欧洲", "亚太", "中东"],
+    "integration_level": "high",
+    "integration_targets": ["ATS", "HRIS", "CRM", "SSO", "Email", "Career Site", "LinkedIn"],
+    "compliance_flags": {
+      "supports_private_deployment": true,
+      "audit_log": true,
+      "role_permission": true,
+      "pii_handling": "strong",
+      "cross_border_risk": "low"
+    },
+    "enterprise_readiness": {
+      "sla_level": "high",
+      "admin_console": true,
+      "analytics_dashboard": true,
+      "api_available": true,
+      "multi_role_support": true
+    },
+    "evaluation_config": {
+      "applicable_track": "fullcycle_recruiting",
+      "applicable_dimensions": ["process_coverage", "candidate_interaction", "recruiting_automation", "business_control"],
+      "dimension_weights": {
+        "process_coverage": 0.30,
+        "candidate_interaction": 0.25,
+        "recruiting_automation": 0.25,
+        "business_control": 0.20
+      },
+      "hard_gates": ["basic_accessibility", "enterprise_governance", "data_privacy", "task_closure_minimum"],
+      "required_assets": ["jd_template", "candidate_profiles", "recruiting_policy", "funnel_data"]
+    }
+  }
+]

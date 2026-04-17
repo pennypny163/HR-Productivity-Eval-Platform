@@ -1,0 +1,518 @@
+[
+  {
+    "sku_id": "sku-src-001",
+    "sku_name": "Fetcher AI",
+    "qualification": {
+      "status": "pass",
+      "total_score": 82,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "提供完整SaaS平台入口，支持在线演示和试用，产品形态清晰。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "支持角色权限管理和审计日志，具备基础企业治理能力。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力强，符合GDPR要求，但不支持私有化部署，跨境风险中等。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "支持从人才搜索到自动触达的完整闭环，核心任务链路成立。"}
+      ],
+      "base_scores": {
+        "operability": 85,
+        "integration_readiness": 88,
+        "enterprise_safety": 78,
+        "task_closure": 80
+      },
+      "summary": "Fetcher AI作为成熟的SaaS寻源平台，企业级准备度高，集成能力强，通过所有硬门槛。",
+      "key_risks": ["不支持私有化部署", "跨境数据传输需额外评估"]
+    },
+    "scenario_assessment": {
+      "track": "sourcing_outreach",
+      "total_score": 81,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "search_recall_quality", "dimension_name": "候选人召回与搜索质量", "score": 78, "comment": "搜索召回能力良好，但人才库规模不及SeekOut，在稀缺岗位搜索上深度有限。"},
+        {"dimension_key": "matching_relevance", "dimension_name": "匹配相关性与推荐有效性", "score": 82, "comment": "AI匹配算法表现稳定，推荐候选人与JD相关性较高，但缺乏多维属性图谱。"},
+        {"dimension_key": "outreach_automation", "dimension_name": "触达效率与自动化能力", "score": 88, "comment": "自动化触达序列是核心优势，支持多步骤邮件序列和A/B测试，触达效率突出。"},
+        {"dimension_key": "team_workflow_support", "dimension_name": "招聘团队协同与回写支持", "score": 75, "comment": "支持ATS回写和团队协作，但协同功能深度一般。"}
+      ],
+      "strengths": ["自动化触达序列成熟", "ATS集成能力强", "操作界面直观"],
+      "weaknesses": ["人才库规模有限", "不支持中文搜索", "缺乏深度人才画像"],
+      "suitable_for": ["技术岗位批量寻源", "北美市场招聘", "需要自动化触达的团队"],
+      "not_suitable_for": ["中文招聘场景", "需要私有化部署的企业", "高端猎聘场景"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "core_module",
+      "recommended_bundle_roles": ["寻源与触达赛道核心模块", "可与面试评估工具组合"],
+      "recommendation_summary": "Fetcher AI在寻源与触达赛道表现优秀，特别是自动化触达能力突出，建议作为寻源赛道优先shortlist产品。"
+    }
+  },
+  {
+    "sku_id": "sku-src-002",
+    "sku_name": "SeekOut",
+    "qualification": {
+      "status": "pass",
+      "total_score": 88,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "企业级SaaS平台，产品形态成熟，支持完整演示。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "完善的权限管理、审计日志和管理控制台。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力强，跨境风险低，合规体系完善。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从人才搜索到画像匹配到推荐的完整链路。"}
+      ],
+      "base_scores": {
+        "operability": 90,
+        "integration_readiness": 88,
+        "enterprise_safety": 85,
+        "task_closure": 88
+      },
+      "summary": "SeekOut是企业级人才搜索平台的标杆产品，各项企业准备度指标均处于高水平。",
+      "key_risks": ["定价较高", "不支持私有化部署"]
+    },
+    "scenario_assessment": {
+      "track": "sourcing_outreach",
+      "total_score": 85,
+      "fit_level": "core",
+      "dimensions": [
+        {"dimension_key": "search_recall_quality", "dimension_name": "候选人召回与搜索质量", "score": 92, "comment": "800M+人才数据库，搜索深度和广度业界领先，支持多维度高级搜索。"},
+        {"dimension_key": "matching_relevance", "dimension_name": "匹配相关性与推荐有效性", "score": 86, "comment": "AI推荐算法成熟，支持多元化招聘筛选，匹配精准度高。"},
+        {"dimension_key": "outreach_automation", "dimension_name": "触达效率与自动化能力", "score": 78, "comment": "支持基础触达功能，但自动化序列能力不如专注触达的工具。"},
+        {"dimension_key": "team_workflow_support", "dimension_name": "招聘团队协同与回写支持", "score": 80, "comment": "支持团队协作和ATS集成，协同功能满足基本需求。"}
+      ],
+      "strengths": ["人才数据库规模业界领先", "多元化招聘支持", "搜索深度和灵活性强", "企业级安全合规"],
+      "weaknesses": ["触达自动化能力相对较弱", "定价门槛较高", "学习曲线较陡"],
+      "suitable_for": ["大规模人才搜索", "多元化招聘", "全球化人才寻源", "技术人才深度搜索"],
+      "not_suitable_for": ["预算有限的中小企业", "仅需简单触达的场景", "中文招聘场景"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "core_module",
+      "recommended_bundle_roles": ["寻源赛道核心搜索引擎", "可与触达工具互补组合"],
+      "recommendation_summary": "SeekOut在人才搜索质量上表现最优，是寻源赛道的首选核心模块，建议与触达能力更强的工具组合使用。"
+    }
+  },
+  {
+    "sku_id": "sku-src-003",
+    "sku_name": "Findem",
+    "qualification": {
+      "status": "conditional_pass",
+      "total_score": 68,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "提供SaaS平台和API接入，产品可演示。"},
+        {"gate_name": "enterprise_governance", "passed": false, "reason": "缺乏角色权限管理和管理控制台，企业治理能力不足。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，基本满足要求但缺乏深度合规认证。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "支持从搜索到匹配推荐的核心链路，但触达能力较弱。"}
+      ],
+      "base_scores": {
+        "operability": 72,
+        "integration_readiness": 65,
+        "enterprise_safety": 58,
+        "task_closure": 70
+      },
+      "summary": "Findem的属性图谱技术创新性强，但企业治理和集成成熟度存在明显短板，需条件性评估。",
+      "key_risks": ["缺乏企业级权限管理", "集成深度有限", "产品成熟度待验证"]
+    },
+    "scenario_assessment": {
+      "track": "sourcing_outreach",
+      "total_score": 72,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "search_recall_quality", "dimension_name": "候选人召回与搜索质量", "score": 82, "comment": "属性图谱技术独特，能发现传统搜索遗漏的候选人，召回质量有差异化优势。"},
+        {"dimension_key": "matching_relevance", "dimension_name": "匹配相关性与推荐有效性", "score": 85, "comment": "3D人才画像匹配精准度高，是核心竞争力所在。"},
+        {"dimension_key": "outreach_automation", "dimension_name": "触达效率与自动化能力", "score": 55, "comment": "触达自动化能力较弱，主要依赖第三方工具完成触达环节。"},
+        {"dimension_key": "team_workflow_support", "dimension_name": "招聘团队协同与回写支持", "score": 58, "comment": "团队协同功能有限，缺乏多角色支持。"}
+      ],
+      "strengths": ["属性图谱技术创新", "深度人才画像匹配", "发现隐藏候选人能力强"],
+      "weaknesses": ["触达自动化能力弱", "企业治理能力不足", "团队协同功能有限", "集成深度不够"],
+      "suitable_for": ["高端技术人才搜索", "需要差异化搜索能力的场景", "作为搜索能力补充模块"],
+      "not_suitable_for": ["需要完整寻源到触达闭环", "企业治理要求高的场景", "大团队协作场景"]
+    },
+    "recommendation": {
+      "shortlist_label": "B",
+      "purchase_role": "important_module",
+      "recommended_bundle_roles": ["搜索能力补充模块", "需与触达工具和ATS配合使用"],
+      "recommendation_summary": "Findem的属性图谱技术有独特价值，但企业准备度不足，建议作为搜索能力补充模块纳入shortlist，需配合其他工具使用。"
+    }
+  },
+  {
+    "sku_id": "sku-src-004",
+    "sku_name": "hireEZ",
+    "qualification": {
+      "status": "pass",
+      "total_score": 75,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS平台形态清晰，支持在线试用和演示。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "支持角色权限管理，但缺乏审计日志。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，基本满足企业要求。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖寻源、触达和CRM的完整工作流闭环。"}
+      ],
+      "base_scores": {
+        "operability": 78,
+        "integration_readiness": 72,
+        "enterprise_safety": 68,
+        "task_closure": 82
+      },
+      "summary": "hireEZ提供一体化外向型招聘工作流，任务闭环能力强，但企业安全和集成深度有提升空间。",
+      "key_risks": ["缺乏审计日志", "API不可用限制深度集成", "企业安全能力中等"]
+    },
+    "scenario_assessment": {
+      "track": "sourcing_outreach",
+      "total_score": 76,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "search_recall_quality", "dimension_name": "候选人召回与搜索质量", "score": 75, "comment": "搜索能力良好，支持多渠道sourcing，但数据库深度不及头部产品。"},
+        {"dimension_key": "matching_relevance", "dimension_name": "匹配相关性与推荐有效性", "score": 72, "comment": "AI匹配功能可用，但推荐精准度和解释性有提升空间。"},
+        {"dimension_key": "outreach_automation", "dimension_name": "触达效率与自动化能力", "score": 82, "comment": "触达序列自动化是核心优势之一，支持多步骤邮件和跟进。"},
+        {"dimension_key": "team_workflow_support", "dimension_name": "招聘团队协同与回写支持", "score": 78, "comment": "内置CRM支持团队协作，工作流整合度较好。"}
+      ],
+      "strengths": ["一体化工作流体验", "触达自动化能力强", "内置招聘CRM", "性价比较高"],
+      "weaknesses": ["搜索深度不及头部产品", "缺乏API开放能力", "企业安全能力中等"],
+      "suitable_for": ["中型企业一站式寻源", "需要工作流整合的团队", "预算敏感的招聘团队"],
+      "not_suitable_for": ["需要深度API集成", "企业安全要求极高的场景", "超大规模人才搜索"]
+    },
+    "recommendation": {
+      "shortlist_label": "B",
+      "purchase_role": "important_module",
+      "recommended_bundle_roles": ["中型企业一站式寻源方案", "可独立使用或与ATS配合"],
+      "recommendation_summary": "hireEZ提供良好的一体化寻源工作流体验，性价比较高，适合中型企业作为主要寻源工具。"
+    }
+  },
+  {
+    "sku_id": "sku-int-001",
+    "sku_name": "HireVue",
+    "qualification": {
+      "status": "pass",
+      "total_score": 90,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "成熟的企业级SaaS平台，产品形态完整，支持全面演示。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "完善的权限管理、审计日志、SSO集成和管理控制台。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力强，多项合规认证，跨境风险低。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从面试设计到视频面试到AI评估到反馈的完整闭环。"}
+      ],
+      "base_scores": {
+        "operability": 92,
+        "integration_readiness": 90,
+        "enterprise_safety": 88,
+        "task_closure": 90
+      },
+      "summary": "HireVue是面试评估赛道最成熟的企业级平台，各项指标均处于高水平，是该赛道的标杆产品。",
+      "key_risks": ["AI评估的公平性持续受到行业关注", "定价较高"]
+    },
+    "scenario_assessment": {
+      "track": "interview_assessment",
+      "total_score": 86,
+      "fit_level": "core",
+      "dimensions": [
+        {"dimension_key": "structured_interview_support", "dimension_name": "结构化面试设计支持", "score": 90, "comment": "提供完整的结构化面试设计工具，支持能力模型映射和评分标准定义，是核心优势。"},
+        {"dimension_key": "evidence_extraction", "dimension_name": "评估证据提取与总结质量", "score": 85, "comment": "AI辅助的视频分析和评估摘要质量较高，但证据提取的可解释性仍有提升空间。"},
+        {"dimension_key": "consistency_bias_control", "dimension_name": "评估一致性与偏差控制", "score": 88, "comment": "结构化评分和AI辅助显著提升评估一致性，偏差控制机制较为完善。"},
+        {"dimension_key": "interviewer_collaboration", "dimension_name": "面试协同与反馈效率", "score": 82, "comment": "支持多面试官协同和反馈整合，但实时协作功能有限。"}
+      ],
+      "strengths": ["结构化面试设计能力强", "AI评估一致性高", "企业级安全合规", "多语言支持"],
+      "weaknesses": ["AI评估公平性争议", "定价门槛高", "实时协作功能有限"],
+      "suitable_for": ["大规模标准化面试", "校园招聘批量评估", "需要评估一致性的场景", "全球化面试"],
+      "not_suitable_for": ["预算有限的中小企业", "仅需轻量面试记录", "对AI评估有顾虑的企业"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "core_module",
+      "recommended_bundle_roles": ["面试评估赛道核心平台", "可与寻源工具和全流程平台组合"],
+      "recommendation_summary": "HireVue是面试评估赛道的首选核心平台，结构化面试和AI评估能力业界领先，建议优先纳入shortlist。"
+    }
+  },
+  {
+    "sku_id": "sku-int-002",
+    "sku_name": "Pymetrics",
+    "qualification": {
+      "status": "pass",
+      "total_score": 80,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS平台形态清晰，游戏化测评体验完整。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "支持审计日志和权限管理，企业治理能力良好。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力强，注重公平性和偏差消除。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从测评到能力评估到岗位匹配的闭环。"}
+      ],
+      "base_scores": {
+        "operability": 82,
+        "integration_readiness": 72,
+        "enterprise_safety": 85,
+        "task_closure": 78
+      },
+      "summary": "Pymetrics在公平性和偏差控制方面表现突出，但集成深度和多角色支持有限。",
+      "key_risks": ["集成深度有限", "不支持多角色管理", "游戏化测评接受度因企业而异"]
+    },
+    "scenario_assessment": {
+      "track": "interview_assessment",
+      "total_score": 74,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "structured_interview_support", "dimension_name": "结构化面试设计支持", "score": 65, "comment": "侧重游戏化测评而非传统面试设计，结构化面试支持能力有限。"},
+        {"dimension_key": "evidence_extraction", "dimension_name": "评估证据提取与总结质量", "score": 78, "comment": "基于神经科学的行为数据提取质量高，但与传统面试证据的关联性有限。"},
+        {"dimension_key": "consistency_bias_control", "dimension_name": "评估一致性与偏差控制", "score": 92, "comment": "偏差控制是核心优势，算法经过严格的公平性审计，一致性表现优异。"},
+        {"dimension_key": "interviewer_collaboration", "dimension_name": "面试协同与反馈效率", "score": 60, "comment": "主要面向候选人自助测评，面试官协同功能较弱。"}
+      ],
+      "strengths": ["偏差控制业界领先", "神经科学方法论独特", "候选人体验好", "公平性审计完善"],
+      "weaknesses": ["传统面试支持弱", "面试官协同功能有限", "集成深度不足", "适用场景较窄"],
+      "suitable_for": ["校园招聘批量筛选", "多元化招聘", "需要公平性证明的场景", "软技能评估"],
+      "not_suitable_for": ["传统结构化面试场景", "需要面试官深度协同", "技术面试评估"]
+    },
+    "recommendation": {
+      "shortlist_label": "B",
+      "purchase_role": "supplementary_module",
+      "recommended_bundle_roles": ["面试评估赛道补充测评模块", "与结构化面试工具互补"],
+      "recommendation_summary": "Pymetrics在偏差控制和公平性方面有独特价值，建议作为面试评估的补充测评模块，与HireVue等结构化面试工具互补使用。"
+    }
+  },
+  {
+    "sku_id": "sku-int-003",
+    "sku_name": "Metaview",
+    "qualification": {
+      "status": "pass",
+      "total_score": 76,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS产品形态清晰，支持主流视频会议平台集成。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "支持审计日志，但缺乏管理控制台和角色权限。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，面试录音数据的隐私处理需关注。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖面试记录到证据提取到评估摘要的核心链路。"}
+      ],
+      "base_scores": {
+        "operability": 80,
+        "integration_readiness": 82,
+        "enterprise_safety": 65,
+        "task_closure": 78
+      },
+      "summary": "Metaview在面试记录和证据提取方面表现突出，但企业治理能力和安全性有提升空间。",
+      "key_risks": ["缺乏管理控制台", "面试录音隐私合规需评估", "企业安全能力中等"]
+    },
+    "scenario_assessment": {
+      "track": "interview_assessment",
+      "total_score": 78,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "structured_interview_support", "dimension_name": "结构化面试设计支持", "score": 72, "comment": "支持面试提纲模板，但不提供完整的结构化面试设计工具。"},
+        {"dimension_key": "evidence_extraction", "dimension_name": "评估证据提取与总结质量", "score": 92, "comment": "AI面试笔记和证据提取是核心优势，自动生成的面试摘要质量业界领先。"},
+        {"dimension_key": "consistency_bias_control", "dimension_name": "评估一致性与偏差控制", "score": 75, "comment": "通过标准化记录提升一致性，但缺乏主动偏差检测机制。"},
+        {"dimension_key": "interviewer_collaboration", "dimension_name": "面试协同与反馈效率", "score": 72, "comment": "支持面试笔记共享，但多面试官协同和反馈整合功能有限。"}
+      ],
+      "strengths": ["AI面试笔记质量业界领先", "证据提取能力强", "与视频会议平台深度集成", "面试官体验好"],
+      "weaknesses": ["结构化面试设计能力有限", "企业治理功能不足", "多面试官协同较弱"],
+      "suitable_for": ["技术面试记录", "需要面试证据留存", "面试官效率提升", "面试质量审计"],
+      "not_suitable_for": ["需要完整结构化面试设计", "企业治理要求高", "大规模批量面试"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "important_module",
+      "recommended_bundle_roles": ["面试记录与证据提取核心模块", "与结构化面试平台互补"],
+      "recommendation_summary": "Metaview在面试记录和证据提取方面有独特优势，建议作为面试评估赛道的重要模块，与HireVue等平台互补使用。"
+    }
+  },
+  {
+    "sku_id": "sku-int-004",
+    "sku_name": "Humanly",
+    "qualification": {
+      "status": "conditional_pass",
+      "total_score": 62,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS产品可用，支持基础演示。"},
+        {"gate_name": "enterprise_governance", "passed": false, "reason": "缺乏审计日志、角色权限和管理控制台，企业治理能力不足。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，跨境风险中等。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖面试前筛选到面试安排到反馈收集的链路。"}
+      ],
+      "base_scores": {
+        "operability": 68,
+        "integration_readiness": 62,
+        "enterprise_safety": 50,
+        "task_closure": 65
+      },
+      "summary": "Humanly提供对话式面试辅助能力，但企业治理和安全能力明显不足，需条件性评估。",
+      "key_risks": ["企业治理能力严重不足", "缺乏API开放能力", "产品成熟度待验证", "安全合规能力弱"]
+    },
+    "scenario_assessment": {
+      "track": "interview_assessment",
+      "total_score": 64,
+      "fit_level": "supplementary",
+      "dimensions": [
+        {"dimension_key": "structured_interview_support", "dimension_name": "结构化面试设计支持", "score": 58, "comment": "提供基础面试问题模板，但结构化设计能力有限。"},
+        {"dimension_key": "evidence_extraction", "dimension_name": "评估证据提取与总结质量", "score": 62, "comment": "对话记录可作为基础证据，但提取和总结质量一般。"},
+        {"dimension_key": "consistency_bias_control", "dimension_name": "评估一致性与偏差控制", "score": 68, "comment": "标准化对话流程有助于一致性，但缺乏深度偏差控制。"},
+        {"dimension_key": "interviewer_collaboration", "dimension_name": "面试协同与反馈效率", "score": 70, "comment": "对话式交互降低了面试协调成本，反馈收集效率较好。"}
+      ],
+      "strengths": ["对话式交互体验好", "面试前筛选效率高", "降低面试协调成本"],
+      "weaknesses": ["结构化面试能力弱", "企业治理严重不足", "证据提取质量一般", "产品成熟度有限"],
+      "suitable_for": ["面试前自动筛选", "候选人FAQ应答", "面试安排自动化"],
+      "not_suitable_for": ["深度结构化面试评估", "企业治理要求高的场景", "需要高质量证据提取"]
+    },
+    "recommendation": {
+      "shortlist_label": "C",
+      "purchase_role": "supplementary_module",
+      "recommended_bundle_roles": ["面试前筛选辅助模块", "需与主面试平台配合"],
+      "recommendation_summary": "Humanly在面试前筛选和候选人交互方面有一定价值，但企业准备度不足，建议作为补充模块观察，暂不建议作为核心采购。"
+    }
+  },
+  {
+    "sku_id": "sku-fc-001",
+    "sku_name": "Paradox Olivia",
+    "qualification": {
+      "status": "pass",
+      "total_score": 87,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "成熟的对话式AI平台，产品形态完整，支持多渠道部署。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "完善的权限管理、审计日志和管理控制台。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力强，合规体系完善，跨境风险低。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从候选人申请到面试安排到offer沟通的多环节闭环。"}
+      ],
+      "base_scores": {
+        "operability": 88,
+        "integration_readiness": 90,
+        "enterprise_safety": 85,
+        "task_closure": 88
+      },
+      "summary": "Paradox Olivia是全流程招聘Agent赛道的标杆产品，对话式AI能力和企业级准备度均处于高水平。",
+      "key_risks": ["对话式AI的候选人接受度因文化而异", "定制化成本较高"]
+    },
+    "scenario_assessment": {
+      "track": "fullcycle_recruiting",
+      "total_score": 84,
+      "fit_level": "core",
+      "dimensions": [
+        {"dimension_key": "process_coverage", "dimension_name": "招聘流程覆盖与闭环能力", "score": 88, "comment": "覆盖从申请到offer的多个关键环节，流程闭环能力强。"},
+        {"dimension_key": "candidate_interaction", "dimension_name": "候选人交互与响应效率", "score": 92, "comment": "对话式AI交互是核心优势，7×24响应，候选人体验业界领先。"},
+        {"dimension_key": "recruiting_automation", "dimension_name": "招聘运营自动化水平", "score": 82, "comment": "自动筛选、面试安排和FAQ应答自动化程度高。"},
+        {"dimension_key": "business_control", "dimension_name": "多角色协同与业务可控性", "score": 75, "comment": "支持多角色协同，但业务规则定制灵活性有提升空间。"}
+      ],
+      "strengths": ["对话式AI交互业界领先", "候选人体验优秀", "多渠道部署能力", "企业级安全合规"],
+      "weaknesses": ["业务规则定制灵活性有限", "定制化成本较高", "对话式交互文化适应性"],
+      "suitable_for": ["高频招聘自动化", "候选人体验提升", "零售/服务业招聘", "校园招聘"],
+      "not_suitable_for": ["需要高度定制化的场景", "对话式AI接受度低的文化环境"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "core_module",
+      "recommended_bundle_roles": ["全流程招聘赛道核心Agent", "可与寻源和面试评估工具组合"],
+      "recommendation_summary": "Paradox Olivia是全流程招聘赛道的首选核心产品，对话式AI能力和候选人交互体验业界领先，建议优先纳入shortlist。"
+    }
+  },
+  {
+    "sku_id": "sku-fc-002",
+    "sku_name": "Tezi",
+    "qualification": {
+      "status": "conditional_pass",
+      "total_score": 65,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS产品可用，支持基础演示和API接入。"},
+        {"gate_name": "enterprise_governance", "passed": false, "reason": "缺乏审计日志、管理控制台和多角色支持，企业治理能力不足。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，基本满足要求。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖简历筛选到候选人沟通到面试协调的核心链路。"}
+      ],
+      "base_scores": {
+        "operability": 70,
+        "integration_readiness": 65,
+        "enterprise_safety": 55,
+        "task_closure": 72
+      },
+      "summary": "Tezi作为新兴AI招聘Agent，自动化能力有潜力，但企业治理和产品成熟度存在明显短板。",
+      "key_risks": ["企业治理能力不足", "产品成熟度待验证", "缺乏分析仪表盘", "团队规模和稳定性"]
+    },
+    "scenario_assessment": {
+      "track": "fullcycle_recruiting",
+      "total_score": 68,
+      "fit_level": "supplementary",
+      "dimensions": [
+        {"dimension_key": "process_coverage", "dimension_name": "招聘流程覆盖与闭环能力", "score": 72, "comment": "覆盖核心招聘环节，但流程深度和广度不及成熟平台。"},
+        {"dimension_key": "candidate_interaction", "dimension_name": "候选人交互与响应效率", "score": 70, "comment": "AI驱动的候选人沟通能力可用，但交互体验和多渠道支持有限。"},
+        {"dimension_key": "recruiting_automation", "dimension_name": "招聘运营自动化水平", "score": 72, "comment": "自动化处理重复性任务的能力是核心卖点，但稳定性待验证。"},
+        {"dimension_key": "business_control", "dimension_name": "多角色协同与业务可控性", "score": 55, "comment": "缺乏多角色支持和业务规则配置能力。"}
+      ],
+      "strengths": ["AI Agent概念前沿", "自动化处理重复任务", "API可用"],
+      "weaknesses": ["企业治理严重不足", "产品成熟度有限", "缺乏分析能力", "多角色协同弱"],
+      "suitable_for": ["小型招聘团队效率提升", "招聘运营自动化试点", "技术导向的招聘团队"],
+      "not_suitable_for": ["大型企业正式采购", "企业治理要求高的场景", "需要完整分析能力"]
+    },
+    "recommendation": {
+      "shortlist_label": "C",
+      "purchase_role": "observe_only",
+      "recommended_bundle_roles": ["观察期产品", "可作为自动化能力试点"],
+      "recommendation_summary": "Tezi概念前沿但产品成熟度不足，建议列入观察名单，待产品成熟后再评估正式采购。"
+    }
+  },
+  {
+    "sku_id": "sku-fc-003",
+    "sku_name": "Manatal",
+    "qualification": {
+      "status": "pass",
+      "total_score": 78,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "SaaS平台形态完整，支持在线试用和演示。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "支持角色权限、审计日志和管理控制台。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "PII处理能力中等，跨境风险低。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从候选人管理到面试安排到offer管理的完整链路。"}
+      ],
+      "base_scores": {
+        "operability": 82,
+        "integration_readiness": 72,
+        "enterprise_safety": 75,
+        "task_closure": 82
+      },
+      "summary": "Manatal提供完整的招聘管理平台能力，性价比高，适合中小型企业使用。",
+      "key_risks": ["集成深度有限", "大型企业场景支持不足", "AI能力深度有限"]
+    },
+    "scenario_assessment": {
+      "track": "fullcycle_recruiting",
+      "total_score": 74,
+      "fit_level": "strong",
+      "dimensions": [
+        {"dimension_key": "process_coverage", "dimension_name": "招聘流程覆盖与闭环能力", "score": 82, "comment": "覆盖招聘全流程，从寻源到offer管理，流程完整度高。"},
+        {"dimension_key": "candidate_interaction", "dimension_name": "候选人交互与响应效率", "score": 68, "comment": "基础候选人沟通功能可用，但缺乏对话式AI交互能力。"},
+        {"dimension_key": "recruiting_automation", "dimension_name": "招聘运营自动化水平", "score": 72, "comment": "AI推荐和基础自动化功能可用，但深度自动化能力有限。"},
+        {"dimension_key": "business_control", "dimension_name": "多角色协同与业务可控性", "score": 78, "comment": "支持多角色协同和业务规则配置，管理可控性较好。"}
+      ],
+      "strengths": ["招聘流程覆盖完整", "性价比高", "操作界面直观", "多角色协同支持"],
+      "weaknesses": ["AI能力深度有限", "候选人交互能力弱", "集成深度不足", "大型企业支持有限"],
+      "suitable_for": ["中小型企业招聘管理", "招聘外包团队", "需要快速上手的团队"],
+      "not_suitable_for": ["大型企业复杂招聘场景", "需要深度AI能力", "需要深度系统集成"]
+    },
+    "recommendation": {
+      "shortlist_label": "B",
+      "purchase_role": "important_module",
+      "recommended_bundle_roles": ["中小企业全流程招聘平台", "可独立使用"],
+      "recommendation_summary": "Manatal是性价比较高的全流程招聘平台，适合中小型企业作为主要招聘管理工具。"
+    }
+  },
+  {
+    "sku_id": "sku-fc-004",
+    "sku_name": "Eightfold AI",
+    "qualification": {
+      "status": "pass",
+      "total_score": 92,
+      "hard_gate_results": [
+        {"gate_name": "basic_accessibility", "passed": true, "reason": "企业级AI人才智能平台，产品形态成熟，支持完整演示。"},
+        {"gate_name": "enterprise_governance", "passed": true, "reason": "完善的权限管理、审计日志、SSO和管理控制台。"},
+        {"gate_name": "data_privacy", "passed": true, "reason": "支持私有化部署，PII处理能力强，合规体系完善。"},
+        {"gate_name": "task_closure_minimum", "passed": true, "reason": "覆盖从人才发现到匹配到招聘运营到内部流动的超长链路。"}
+      ],
+      "base_scores": {
+        "operability": 90,
+        "integration_readiness": 92,
+        "enterprise_safety": 95,
+        "task_closure": 92
+      },
+      "summary": "Eightfold AI是企业级人才智能平台的标杆，各项指标均处于最高水平，是大型企业的首选。",
+      "key_risks": ["定价极高", "实施周期长", "需要较强的内部IT支持"]
+    },
+    "scenario_assessment": {
+      "track": "fullcycle_recruiting",
+      "total_score": 88,
+      "fit_level": "core",
+      "dimensions": [
+        {"dimension_key": "process_coverage", "dimension_name": "招聘流程覆盖与闭环能力", "score": 95, "comment": "覆盖招聘全生命周期，从人才发现到内部流动，流程覆盖度业界最高。"},
+        {"dimension_key": "candidate_interaction", "dimension_name": "候选人交互与响应效率", "score": 82, "comment": "AI匹配和推荐能力强，但对话式交互不如Paradox。"},
+        {"dimension_key": "recruiting_automation", "dimension_name": "招聘运营自动化水平", "score": 88, "comment": "深度学习驱动的自动化能力强，人才匹配和推荐自动化水平高。"},
+        {"dimension_key": "business_control", "dimension_name": "多角色协同与业务可控性", "score": 85, "comment": "企业级多角色协同和业务规则配置能力完善。"}
+      ],
+      "strengths": ["深度学习人才图谱", "流程覆盖度最高", "支持私有化部署", "企业级安全合规最强"],
+      "weaknesses": ["定价极高", "实施周期长", "对话式交互能力不如专注Agent", "需要IT支持"],
+      "suitable_for": ["大型企业人才运营", "全球化招聘", "需要私有化部署", "人才全生命周期管理"],
+      "not_suitable_for": ["中小企业", "预算有限的团队", "需要快速上线的场景"]
+    },
+    "recommendation": {
+      "shortlist_label": "A",
+      "purchase_role": "core_module",
+      "recommended_bundle_roles": ["大型企业人才智能基础设施", "可与专项工具组合增强"],
+      "recommendation_summary": "Eightfold AI是大型企业全流程招聘的首选平台，人才智能能力和企业准备度均为最高水平，建议大型企业优先评估。"
+    }
+  }
+]
