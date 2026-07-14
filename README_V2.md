@@ -112,6 +112,12 @@ uvicorn main_v2:app --reload --port 8000
 open http://localhost:8000
 ```
 
+### GitHub Pages 静态演示
+
+Pages 构建会运行 `python3 scripts/export_static_v2.py`，把仓库中的 V2 数据生成到 `static/v2/data.json`。前端优先请求真实 `/api/v2`，API 不可用时自动使用静态快照，因此总览、赛道、SKU 详情、对比、场景推荐和组合方案均可独立展示。
+
+部署真实后端后，可在页面加载前设置 `window.DPU_API_BASE` 指向 V2 API 地址；后端不可用时仍会自动降级。
+
 ## 五、页面结构
 
 | 页面 | 功能 |
