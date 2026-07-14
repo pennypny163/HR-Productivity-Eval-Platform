@@ -18,7 +18,8 @@ const state = {
     charts: {}
 };
 
-const API_BASE = '/api/v2';
+const API_BASE = window.DPU_API_BASE || '/api/v2';
+let staticSnapshotPromise = null;
 
 const TRACK_NAMES = {
     sourcing_outreach: '候选人寻源与触达',
@@ -53,9 +54,47 @@ const QUAL_NAMES = { pass: '通过', conditional_pass: '条件通过', fail: '�
 // API Helpers
 // ============================================================
 async function api(path) {
-    const res = await fetch(API_BASE + path);
-    if (!res.ok) throw new Error(`API error: ${res.status}`);
-    return res.json();
+    try {
+        const res = await fetch(API_BASE + path);
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        return await res.json();
+    } catch (apiError) {
+        if (!staticSnapshotPromise) {
+            staticSnapshotPromise = fetch('data.json').then(res => {
+                if (!res.ok) throw new Error(`Static data error: ${res.status}`);
+                return res.json();
+            });
+        }
+        const snapshot = await staticSnapshotPromise;
+        return resolveStaticApi(snapshot, path, apiError);
+    }
+}
+
+function resolveStaticApi(snapshot, path, apiError) {
+    const [pathname, queryString = ''] = path.split('?');
+    const query = new URLSearchParams(queryString);
+    if (pathname === '/overview') return snapshot.overview;
+    if (pathname === '/tracks') return snapshot.tracks;
+    if (pathname.startsWith('/tracks/')) return snapshot.trackDetails[decodeURIComponent(pathname.slice(8))];
+    if (pathname === '/skus') {
+        return snapshot.skus.filter(item =>
+            (!query.get('track') || item.profile.primary_track === query.get('track')) &&
+            (!query.get('level') || item.profile.unit_level === query.get('level')) &&
+            (!query.get('deployment') || item.profile.deployment_mode === query.get('deployment')) &&
+            (!query.get('label') || item.evaluation?.recommendation?.shortlist_label === query.get('label'))
+        );
+    }
+    if (pathname.startsWith('/skus/')) return snapshot.skuDetails[decodeURIComponent(pathname.slice(6))];
+    if (pathname === '/compare') {
+        const ids = (query.get('ids') || '').split(',').filter(Boolean);
+        return ids.map(id => snapshot.skus.find(item => item.profile.id === id)).filter(Boolean);
+    }
+    if (pathname === '/scenarios') return snapshot.scenarios;
+    if (pathname === '/bundles') return snapshot.bundles;
+    if (pathname === '/tasks') return query.get('track') ? snapshot.tasks.tracks?.[query.get('track')] || {} : snapshot.tasks;
+    if (pathname === '/mock-assets') return snapshot.mockAssets;
+    if (pathname === '/methodology') return snapshot.methodology;
+    throw apiError;
 }
 
 // ============================================================
